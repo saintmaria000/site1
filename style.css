@@ -1,103 +1,86 @@
-/* === 共通リセット === */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-
-/* === ベーススタイル === */
-body {
   background-color: black;
   color: white;
   font-family: 'Helvetica Neue', sans-serif;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-/* === コンテナラッパー === */
+/* === メイン UI === */
 .form-wrapper {
   width: 100%;
-  padding: 20px;
-}
-
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 400px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
-/* === 招待文 === */
-.invitation-text {
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0.85;
+/* === 招待メッセージ === */
+.invite-message {
+  font-size: 0.9em;
   letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-bottom: 20px;
 }
 
-/* === 入力欄ラベルと線 === */
+/* === フォーム入力エリア === */
 .form-input {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
 }
 
 label {
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  display: block;
-  opacity: 0.6;
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin-left: 5px;
 }
 
 input {
-  width: 100vw; /* 横幅いっぱい */
-  transform: translateX(-10vw); /* 左側にはみ出させる（中央合わせ） */
   background: transparent;
   border: none;
   border-bottom: 1px solid white;
-  padding: 10px 0;
+  padding: 10px 5px;
+  font-size: 1em;
   color: white;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
+  outline: none;
 }
 
-/* === 送信ボタン === */
+/* === エンター === */
 #submit-btn {
-  background: none;
   border: none;
+  background: transparent;
   color: white;
-  font-size: 1.2rem;
-  letter-spacing: 0.3em;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
   cursor: pointer;
-  margin-top: 10px;
+  padding: 20px 0;
 }
 
-/* === スルー（下部） === */
+/* === 下部スルーエリア === */
 .skip-wrapper {
-  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .skip-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   margin-bottom: 5px;
 }
 
 .skip-line {
-  width: 100vw;
+  width: 100px;
   height: 1px;
   background-color: white;
-  transform: translateX(-10vw); /* 同様に端まで刺す */
-}
-
-/* === スマホ対応 === */
-@media screen and (min-width: 601px) {
-  input, .skip-line {
-    width: 100%;
-    transform: none;
-  }
+  margin: 0 auto;
 }
