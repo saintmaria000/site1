@@ -1,54 +1,86 @@
 body {
-  background-image: url('your-background.jpg');
-  background-size: cover;
-  background-position: center;
-  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
   color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.input-overlay ul {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  list-style: none;
-  font-size: 1.2em;
+/* === メイン UI === */
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === 招待メッセージ === */
+.invite-message {
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* === フォーム入力エリア === */
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+label {
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin-left: 5px;
 }
 
 input {
+  background: transparent;
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
+  padding: 10px 5px;
+  font-size: 1em;
+  color: white;
+  outline: none;
+}
+
+/* === エンター === */
+#submit-btn {
+  border: none;
   background: transparent;
   color: white;
-  width: 100%;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  padding: 20px 0;
 }
 
-#submit-btn {
-  margin-top: 30px;
-  font-size: 1.2em;
-  padding: 10px 20px;
-  background: white;
-  color: black;
-}
-
+/* === 下部スルーエリア === */
 .skip-wrapper {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .skip-label {
-  position: relative;
-  top: -10px;
+  display: block;
   font-size: 0.9em;
-  color: white;
+  margin-bottom: 5px;
 }
 
 .skip-line {
-  width: 60px;
+  width: 100px;
   height: 1px;
   background-color: white;
-  margin-top: 5px;
+  margin: 0 auto;
 }
