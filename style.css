@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 /* ラベル */
@@ -48,7 +48,7 @@ label {
 /* === 入力欄 === */
 input {
   width: 100vw;
-  transform: translateX(-10vw);
+  /*transform: translateX(-10vw);*/
   background: transparent;
   border: none;
   border-bottom: 1px solid white;
