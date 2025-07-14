@@ -67,6 +67,7 @@ input {
 @media screen and (max-width: 599px) {
   input {
     width: 100vw;
+    padding-left: 125px;
     max-width: none;
   }
 }
