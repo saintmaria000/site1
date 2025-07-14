@@ -1,0 +1,54 @@
+body {
+  background-image: url('your-background.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+}
+
+.input-overlay ul {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  list-style: none;
+  font-size: 1.2em;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: white;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+#submit-btn {
+  margin-top: 30px;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+}
+
+.skip-wrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.skip-label {
+  position: relative;
+  top: -10px;
+  font-size: 0.9em;
+  color: white;
+}
+
+.skip-line {
+  width: 60px;
+  height: 1px;
+  background-color: white;
+  margin-top: 5px;
+}
