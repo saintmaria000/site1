@@ -8,20 +8,29 @@
 </head>
 <body>
   <div class="form-wrapper">
-    <div class="input-overlay">
-      <ul id="floating-history"></ul>
-    </div>
-
-    <input id="name-input" type="text" placeholder="Your Name" />
-    <input id="email-input" type="email" placeholder="Your Email" />
     
-    <button id="submit-btn">ENTER</button>
-
-    <div class="skip-wrapper" onclick="handleSkip()">
-      <span class="skip-label">スルー</span>
-      <div class="skip-line"></div>
+    <div class="invite-message">
+     Next party ... 8/30 // if you join?
     </div>
+    
+    <div class="form-input">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Enter your name" />
+    </div>
+    
+    <div class="form-input">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Enter your email" />
+    </div>
+    
+    <button id="submit-btn">enter</button>
+  
   </div>
+
+<div class="skip-wrapper">
+  <span class="skip-label">Through</span>
+  <div class="skip-line"></div>
+</div>
 
   <script src="script.js"></script>
 </body>
