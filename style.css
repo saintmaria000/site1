@@ -66,7 +66,7 @@ input {
 /* スマホサイズ：右端まで突き抜ける演出 */
 @media screen and (max-width: 599px) {
   input {
-    width: 90vw;
+    width: 100vw;
     max-width: none;
   }
 }
