@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <div class="input-overlay">
+      <ul id="floating-history"></ul>
+    </div>
+
+    <input id="name-input" type="text" placeholder="Your Name" />
+    <input id="email-input" type="email" placeholder="Your Email" />
+    
+    <button id="submit-btn">ENTER</button>
+
+    <div class="skip-wrapper" onclick="handleSkip()">
+      <span class="skip-label">スルー</span>
+      <div class="skip-line"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
