@@ -1,4 +1,4 @@
-/* === 共通リセットと背景 === */
+/* === 全体設定 === */
 body {
   margin: 0;
   padding: 0;
@@ -8,18 +8,21 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* === メイン UI === */
+/* === メイン UIラッパー === */
 .form-wrapper {
   width: 100%;
+  max-width: 500px;
+  margin: auto;
   padding: 40px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 /* === 招待メッセージ === */
@@ -34,21 +37,19 @@ body {
 .form-input {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  text-align: left;
+  gap: 20px;
+  width: 100%;
 }
 
-/* ラベル */
 label {
   font-size: 0.8em;
   opacity: 0.7;
   margin-left: 5px;
+  text-align: left;
 }
 
 /* === 入力欄 === */
 input {
-  width: 100vw;
-  /*transform: translateX(-10vw);*/
   background: transparent;
   border: none;
   border-bottom: 1px solid white;
@@ -56,9 +57,29 @@ input {
   font-size: 1em;
   color: white;
   outline: none;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
 }
 
-/* === エンター === */
+/* スマホサイズ：右端まで突き抜ける演出 */
+@media screen and (max-width: 599px) {
+  input {
+    width: 90vw;
+    max-width: none;
+  }
+}
+
+/* PCサイズ：中央寄せ */
+@media screen and (min-width: 600px) {
+  input {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* === エンター（送信）ボタン === */
 #submit-btn {
   border: none;
   background: transparent;
@@ -69,9 +90,9 @@ input {
   padding: 20px 0;
 }
 
-/* === スルー部 === */
+/* === 下部スルーエリア === */
 .skip-wrapper {
-  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -81,18 +102,11 @@ input {
   margin-bottom: 5px;
 }
 
+/* 横線 */
 .skip-line {
-  width: 100vw;
   height: 1px;
   background-color: white;
-  transform: translateX(-10vw);
-}
-
-/* === PCサイズ以上では中央に寄せて最大幅制限 === */
-@media screen and (min-width: 600px) {
-  input,
-  .skip-line {
-    width: 400px;
-    transform: none;
-  }
+  width: 90vw;
+  max-width: 400px;
+  margin: 0 auto;
 }
