@@ -60,7 +60,7 @@ input {
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 /* スマホサイズ：右端まで突き抜ける演出 */
@@ -75,7 +75,7 @@ input {
 @media screen and (min-width: 600px) {
   input {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
   }
 }
 
