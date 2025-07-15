@@ -58,6 +58,11 @@
   backdrop-filter: blur(6px);
 }
 .skip-wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 51;
   margin-bottom: 30px;
   text-align: center;
 }
