@@ -102,6 +102,14 @@ input {
   display: block;
   font-size: 0.9em;
   margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.skip-label:hover,
+.skip-label:focus {
+  opacity: 0.6;
 }
 
 /* 横線 */
