@@ -10,7 +10,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
-  setupUI();
+ //setupUI();
   setupAudio();
   initVisual4();
 
