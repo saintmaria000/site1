@@ -91,11 +91,46 @@ input {
   cursor: pointer;
   padding: 20px 0;
 }
+/* === ボタンのホバー・フォーカス時に色を薄く === */
+#submit-btn:hover,
+#submit-btn:focus {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
 
 /* === 下部スルーエリア === */
 .skip-wrapper {
   margin-bottom: 30px;
   text-align: center;
+}
+
+.skip-link {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.skip-link:hover,
+.skip-link:focus {
+  opacity: 0.6;
+}
+
+/* 中のラベルと線に共通のスタイルを保持 */
+.skip-label {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.skip-line {
+  height: 1px;
+  background-color: white;
+  width: 90vw;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .skip-label {
@@ -104,12 +139,6 @@ input {
   margin-bottom: 5px;
   color: white;
   text-decoration: none;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-.skip-label:hover,
-.skip-label:focus {
-  opacity: 0.6;
 }
 
 /* 横線 */
@@ -120,17 +149,4 @@ input {
   max-width: 400px;
   margin: 0 auto;
 }
-/* === ボタンのホバー・フォーカス時に色を薄く === */
-#submit-btn:hover,
-#submit-btn:focus {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-/* === skip-line にも hover / focus 対応 === */
-.skip-line:hover,
-.skip-line:focus {
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  outline: none;
-}
