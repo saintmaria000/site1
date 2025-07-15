@@ -1,5 +1,6 @@
 /* === 全体設定1 === */
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   background-color: black;
