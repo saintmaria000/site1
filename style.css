@@ -29,7 +29,7 @@ body {
 
 /* === 招待メッセージ === */
 .invite-message {
-  font-size: 0.9em;
+  font-size: 0.8em;
   letter-spacing: 0.5px;
   opacity: 0.85;
   margin-bottom: 20px;
