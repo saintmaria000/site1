@@ -143,12 +143,3 @@ input {
   text-decoration: none;
 }
 
-/* 横線 */
-.skip-line {
-  height: 1px;
-  background-color: white;
-  width: 90vw;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
