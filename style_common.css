@@ -43,15 +43,48 @@ canvas {
 
 /* === Toggle Button === */
 #toggle-btn {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #00cc99;
-  color: white;
+  width: 40px;
+  height: 40px;
+  background: transparent;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* 共通部分（アイコン形状用） */
+#toggle-btn::before,
+#toggle-btn::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  width: 8px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+/* 再生（三角形） */
+#toggle-btn.play::before {
+  left: 14px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: white;
+  width: 0;
+}
+
+#toggle-btn.play::after {
+  display: none;
+}
+
+/* ポーズ（縦2本線） */
+#toggle-btn.pause::before {
+  left: 10px;
+}
+
+#toggle-btn.pause::after {
+  display: block;
+  right: 10px;
 }
 
 #toggle-btn:hover {
