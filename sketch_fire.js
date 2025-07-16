@@ -17,7 +17,7 @@ function setup() {
   // ファイル名を表示
   const nameDisplay = document.getElementById("file-name-display");
   if (nameDisplay) {
-    nameDisplay.textContent = `🎵 ${fileName}`;
+    nameDisplay.textContent = `${fileName}`;
   }
 
   noFill();
