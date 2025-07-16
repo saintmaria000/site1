@@ -29,7 +29,6 @@ function setup() {
 function draw() {
   updateAudio(); // 音の更新（fft.analyzeなど）を audio.js 側で実行
   //background(0);
-  
   let spectrum = getSpectrum();
   let bass = getBass();
   drawVisual4(); 
@@ -56,6 +55,9 @@ function draw() {
   //     hi: hi.toFixed(1)
   //   });
   // }
+  
+  updateTimeDisplay();
+  
 }
 
 function windowResized() {
