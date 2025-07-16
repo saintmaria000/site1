@@ -94,6 +94,15 @@ canvas {
 #toggle-btn:hover {
 }
 
+#file-name-display{
+  margin-left: 100px;
+}
+
+#time-display{
+  font-family: monospace;
+  font-size: 14px;
+}
+
 /* === Hamburger Icon === */
 #hamburger-nav {
   position: absolute;
