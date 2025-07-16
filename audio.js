@@ -138,9 +138,9 @@ function formatTime(seconds) {
 
 // 時間表示更新関数
 function updateTimeDisplay() {
-  if (soundFile && soundFile.isLoaded()) {
-    const current = formatTime(soundFile.currentTime());
-    const total = formatTime(soundFile.duration());
+  if (sound && sound.isLoaded()) {
+    const current = formatTime(sound.currentTime());
+    const total = formatTime(sound.duration());
     document.getElementById('time-display').textContent = `${current} / ${total}`;
   }
 }
