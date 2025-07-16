@@ -47,6 +47,9 @@
 
 /* === UI Box（暗色に変更） === */
 #ui {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   position: absolute;
   bottom: 40px;
   left: 20px;
