@@ -31,7 +31,7 @@
   </nav>
 
   <div id="ui">
-    <button id="toggle-btn">▶ Play / Pause</button>
+    <button id="toggle-btn"class="play"></button>
     <span id="file-name-display">ファイル未設定</span>
 
   </div>
@@ -41,7 +41,19 @@
   </div>
 
   <!-- スクリプトの読み込み -->
-<!--  <script src="ui.js"></script>-->
+  <script>
+    const toggleBtn = document.getElementById('toggle-btn');
+  
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('play');
+        toggleBtn.classList.toggle('pause');
+      });
+  
+    // 初期状態を「再生」に設定
+    toggleBtn.classList.add('play');
+  </script>
+  
+  <!--  <script src="ui.js"></script>-->
   <script src="audio.js"></script>
   <script src="visual4.js"></script>
   <script src="sketch_fire.js"></script>
