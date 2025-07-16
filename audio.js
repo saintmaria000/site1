@@ -128,3 +128,19 @@ function isHat() {
     getHiDiff() > thresholds.hi.diff
   );
 }
+
+// time formatter
+function formatTime(seconds) {
+  const min = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60);
+  return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+}
+
+// 時間表示更新関数
+function updateTimeDisplay() {
+  if (soundFile && soundFile.isLoaded()) {
+    const current = formatTime(soundFile.currentTime());
+    const total = formatTime(soundFile.duration());
+    document.getElementById('time-display').textContent = `${current} / ${total}`;
+  }
+}
