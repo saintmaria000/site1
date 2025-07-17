@@ -83,34 +83,35 @@ input:focus {
 
 /* === 下部スルーリンク === */
 .skip-wrapper {
-  margin-top: 40px;
-  margin-bottom: 30px;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
   text-align: center;
+  padding-bottom: 20px;
+  z-index: 100;
+  background: transparent;
 }
 
+/* === スキップリンク内のラベルと線 === */
 .skip-link {
   display: inline-block;
-  color: white;
   text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.skip-link:hover,
-.skip-link:focus {
-  opacity: 0.6;
+  color: white;
 }
 
 .skip-label {
   display: block;
   font-size: 0.9em;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .skip-line {
   height: 1px;
   background-color: white;
   width: 90vw;
-  max-width: 400px;
   margin: 0 auto;
+  transition: opacity 0.3s ease;
 }
 
 /* === スマホ極小画面向け調整（〜360px） === */
