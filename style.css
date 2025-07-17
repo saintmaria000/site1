@@ -116,7 +116,7 @@ input:focus {
   width: 80vw;
   max-width: 470px;
   margin: 0 auto;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.6s ease;
 }
 
 /* === スマホ極小画面向け調整（〜360px） === */
