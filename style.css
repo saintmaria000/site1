@@ -17,7 +17,7 @@ body {
 /* === フォームラッパー === */
 .form-wrapper {
   width: 90%;
-  max-width: 480px;
+  max-width: 550px;
   padding: 32px 16px;
   box-sizing: border-box;
   display: flex;
