@@ -60,17 +60,17 @@ body {
   left: 0;
   height: 1px;
   background: white;
-  width: 100%; /* 入力欄の幅ちょうど */
+  width: 100%;
   pointer-events: none;
 }
 /* スマホ（iPhoneなど）用：右端まで突き抜け */
 @media screen and (max-width: 480px) {
   .form-input::after {
-    width: 100vw;
-    max-width: 100%;
+    width: calc(100vw - 24px); /* ←左右padding: 12px考慮済 */
+    max-width: none;
+    left: 0;
     box-sizing: border-box;
-    pointer-events: none;            /* 左端に揃える */
-    transform: none;        /* 念のため位置補正も除外 */
+    pointer-events: none;
   }
 }
 
