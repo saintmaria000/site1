@@ -1,29 +1,29 @@
-/* === Visual Menu（中央） === */
+/* === Visual Menu === */
 #visual-menu {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -60%);
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  gap: 12px;
   justify-content: center;
   align-items: center;
-  gap: 12px;
   background: rgba(0, 0, 64, 0.3);
   padding: 12px 20px;
   border-radius: 8px;
   z-index: 10;
   backdrop-filter: blur(3px);
+  max-width: 90vw;
+  box-sizing: border-box;
 }
 
 #visual-menu button {
   background: transparent;
   color: #ddeeff;
   font-size: 16px;
-  margin: 10px 0;
-  border: none;
   padding: 6px 14px;
+  border: none;
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -45,12 +45,13 @@
   }
 }
 
-/* === UI Box（暗色に変更） === */
+/* === 再生UIエリア === */
 #ui {
-  width: 100%;
+  width: calc(100% - 40px);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   position: absolute;
   bottom: 70px;
   left: 20px;
@@ -60,34 +61,43 @@
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
+  box-sizing: border-box;
 }
+
 .spacer {
   flex-grow: 1;
 }
+
 .track-info {
   display: flex;
   gap: 12px;
   align-items: center;
+  font-size: 14px;
+  max-width: 60vw;
+  word-break: break-word;
 }
+
+/* === スキップ線（下部中央固定） === */
 .skip-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translateX(-50%);
   z-index: 51;
-  margin-bottom: 30px;
   text-align: center;
+  width: clamp(200px, 80vw, 400px);
 }
+
 .skip-menu {
   height: 1px;
   background-color: white;
-  width: 90vw;
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
+  transition: opacity 0.3s ease;
 }
+
 .skip-menu:hover,
 .skip-menu:focus {
   opacity: 0.5;
-  transition: opacity 0.3s ease;
   outline: none;
 }
