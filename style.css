@@ -66,9 +66,10 @@ body {
 /* スマホ（iPhoneなど）用：右端まで突き抜け */
 @media screen and (max-width: 480px) {
   .form-input::after {
-    width: 100vw;           /* 画面全幅で表示 */
-    left: 0;                /* 左端に揃える */
-    max-width: none;        /* max制限を解除 */
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    pointer-events: none;            /* 左端に揃える */
     transform: none;        /* 念のため位置補正も除外 */
   }
 }
@@ -138,6 +139,7 @@ label {
 @media screen and (max-width: 480px) {
   body {
     font-size: 15px;
+    overflow-x: hidden;
   }
 
   .form-wrapper {
@@ -164,6 +166,7 @@ label {
 @media screen and (max-width: 360px) {
   body {
     font-size: 14px;
+    overflow-x: hidden;
   }
 
   .form-wrapper {
