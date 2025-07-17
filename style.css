@@ -37,9 +37,29 @@ body {
 
 /* === フォーム入力 === */
 .form-input {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.form-input input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  font-size: 1em;
+  color: white;
+  outline: none;
+}
+
+.form-input::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: white;
+  width: 100vw;
+  max-width: none;
 }
 
 /* === ラベル === */
