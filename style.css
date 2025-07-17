@@ -12,6 +12,7 @@ body {
   align-items: center;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 /* === フォームラッパー === */
@@ -44,7 +45,7 @@ body {
 .form-input input {
   width: 100%;
   background: transparent;
-  border: none;  /* ← border-bottom 削除 */
+  border: none;
   padding: 10px 0;
   font-size: 1em;
   color: white;
@@ -52,16 +53,18 @@ body {
   box-sizing: border-box;
 }
 
-/* === 下線を画面右端まで突き抜けるように描画 === */
+/* === 下線を画面右側へ突き抜けるように描画 === */
 .form-input::after {
   content: "";
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: auto;
+  right: -50vw; /* ←ここが突き抜けるキモ！ */
   height: 1px;
   background: white;
-  width: 100vw;
+  width: 150vw; /* ←幅を画面右側へ十分延ばす */
   max-width: none;
+  pointer-events: none;
 }
 
 /* === ラベル === */
@@ -125,11 +128,19 @@ label {
   margin: 0 auto;
 }
 
-/* === 極小スマホ対応 === */
-@media screen and (max-width: 360px) {
+/* === iPhone12以下などへのサイズ最適化 === */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
   .form-wrapper {
     padding: 24px 12px;
     gap: 20px;
+  }
+
+  .invite-message {
+    font-size: 0.95rem;
   }
 
   input,
@@ -140,5 +151,22 @@ label {
   #submit-btn {
     letter-spacing: 0.15em;
     padding: 16px 0;
+  }
+}
+
+/* === 極小スマホ対応（維持） === */
+@media screen and (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+
+  .form-wrapper {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+
+  input,
+  #submit-btn {
+    font-size: 0.9em;
   }
 }
