@@ -1,4 +1,4 @@
-/* === 全体設定（スマホ全対応） === */
+/* === 全体設定 === */
 body {
   margin: 0;
   padding: 0;
@@ -35,7 +35,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* === フォーム入力 === */
+/* === フォーム入力ブロック === */
 .form-input {
   position: relative;
   width: 100%;
@@ -44,18 +44,20 @@ body {
 .form-input input {
   width: 100%;
   background: transparent;
-  border: none;
+  border: none;  /* ← border-bottom 削除 */
   padding: 10px 0;
   font-size: 1em;
   color: white;
   outline: none;
+  box-sizing: border-box;
 }
 
+/* === 下線を画面右端まで突き抜けるように描画 === */
 .form-input::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   height: 1px;
   background: white;
   width: 100vw;
@@ -67,22 +69,6 @@ label {
   font-size: 0.85em;
   opacity: 0.7;
   text-align: left;
-}
-
-/* === 入力欄 === */
-input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  padding: 12px 4px;
-  font-size: 1em;
-  color: white;
-  width: 100%;
-  box-sizing: border-box;
-}
-input:focus {
-  border-bottom: 1px solid #55ccff;
-  outline: none;
 }
 
 /* === ボタン === */
@@ -102,7 +88,7 @@ input:focus {
   outline: none;
 }
 
-/* === 下部スルーリンク === */
+/* === スルーリンク === */
 .skip-wrapper {
   position: fixed;
   bottom: 20px;
@@ -114,7 +100,6 @@ input:focus {
   background: transparent;
 }
 
-/* === スキップリンク内のラベルと線 === */
 .skip-link {
   display: inline-block;
   text-decoration: none;
@@ -140,7 +125,7 @@ input:focus {
   transition: opacity 0.6s ease;
 }
 
-/* === スマホ極小画面向け調整（〜360px） === */
+/* === 極小スマホ対応 === */
 @media screen and (max-width: 360px) {
   .form-wrapper {
     padding: 24px 12px;
