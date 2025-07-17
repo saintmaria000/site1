@@ -83,6 +83,7 @@
 .skip-wrapper {
   position: fixed;
   bottom: 20px;
+  padding-bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 51;
@@ -91,7 +92,6 @@
 }
 
 .skip-menu {
-  padding-bottom: 5px;
   padding-top: 5px;
   border-bottom: solid 1px;
   width: 100%;
