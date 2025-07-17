@@ -1,53 +1,50 @@
-/* === 全体設定1 === */
+/* === 全体設定（スマホ全対応） === */
 body {
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
   background-color: black;
   color: white;
   font-family: 'Helvetica Neue', sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-
-/* === メイン UIラッパー === */
+/* === フォームラッパー === */
 .form-wrapper {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
+  width: 90%;
+  max-width: 480px;
+  padding: 32px 16px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  align-items: stretch;
+  gap: 24px;
 }
 
 /* === 招待メッセージ === */
 .invite-message {
-  font-size: 0.8em;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   opacity: 0.85;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* === フォーム入力エリア === */
+/* === フォーム入力 === */
 .form-input {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  padding-left: 50px;
+  gap: 8px;
 }
 
+/* === ラベル === */
 label {
-  font-size: 0.8em;
+  font-size: 0.85em;
   opacity: 0.7;
-  margin-left: 5px;
   text-align: left;
 }
 
@@ -56,32 +53,18 @@ input {
   background: transparent;
   border: none;
   border-bottom: 1px solid white;
-  padding: 10px 5px;
+  padding: 12px 4px;
   font-size: 1em;
   color: white;
-  outline: none;
-  display: block;
   width: 100%;
-  max-width: 450px;
+  box-sizing: border-box;
+}
+input:focus {
+  border-bottom: 1px solid #55ccff;
+  outline: none;
 }
 
-/* スマホサイズ：右端まで突き抜ける演出 */
-@media screen and (max-width: 599px) {
-  input {
-    width: 100vw;
-    max-width: none;
-  }
-}
-
-/* PCサイズ：中央寄せ */
-@media screen and (min-width: 600px) {
-  input {
-    width: 100%;
-    max-width: 450px;
-  }
-}
-
-/* === エンター（送信）ボタン === */
+/* === ボタン === */
 #submit-btn {
   border: none;
   background: transparent;
@@ -89,42 +72,37 @@ input {
   font-size: 1.1em;
   letter-spacing: 0.2em;
   cursor: pointer;
-  padding: 20px 0;
+  padding: 18px 0;
+  transition: opacity 0.3s ease;
 }
-/* === ボタンのホバー・フォーカス時に色を薄く === */
 #submit-btn:hover,
 #submit-btn:focus {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  outline: none;
 }
 
-
-/* === 下部スルーエリア === */
+/* === 下部スルーリンク === */
 .skip-wrapper {
+  margin-top: 40px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .skip-link {
   display: inline-block;
-  text-align: center;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   transition: opacity 0.3s ease;
 }
-
 .skip-link:hover,
 .skip-link:focus {
   opacity: 0.6;
 }
 
-/* 中のラベルと線に共通のスタイルを保持 */
 .skip-label {
   display: block;
   font-size: 0.9em;
   margin-bottom: 5px;
-  color: white;
-  text-decoration: none;
 }
 
 .skip-line {
@@ -135,11 +113,20 @@ input {
   margin: 0 auto;
 }
 
-.skip-label {
-  display: block;
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  color: white;
-  text-decoration: none;
-}
+/* === スマホ極小画面向け調整（〜360px） === */
+@media screen and (max-width: 360px) {
+  .form-wrapper {
+    padding: 24px 12px;
+    gap: 20px;
+  }
 
+  input,
+  #submit-btn {
+    font-size: 0.95em;
+  }
+
+  #submit-btn {
+    letter-spacing: 0.15em;
+    padding: 16px 0;
+  }
+}
