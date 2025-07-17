@@ -64,7 +64,7 @@ body {
   pointer-events: none;
 }
 /* スマホ（iPhoneなど）用：右端まで突き抜け */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   .form-input::after {
     width: calc(100vw - 24px); /* ←左右padding: 12px考慮済 */
     max-width: none;
