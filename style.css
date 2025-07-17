@@ -113,7 +113,7 @@ input:focus {
 .skip-line {
   height: 1px;
   background-color: white;
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
   transition: opacity 0.3s ease;
 }
