@@ -1,5 +1,5 @@
 /* === Base === */
-body, html {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
@@ -15,6 +15,8 @@ canvas {
   left: 0;
   z-index: 0;
   pointer-events: none;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* === Header === */
@@ -58,15 +60,14 @@ canvas {
   color: white;
 }
 
-/* === Menu Open State === */
 #menu-toggle:checked + .menu-icon + #cover {
   display: flex;
 }
 
 /* === Toggle Button === */
 #toggle-btn {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background: transparent;
   border: none;
   padding: 0;
@@ -75,7 +76,6 @@ canvas {
   outline: none;
 }
 
-/* 共通：再生／ポーズアイコンのベース */
 #toggle-btn::before,
 #toggle-btn::after {
   content: '';
@@ -89,8 +89,8 @@ canvas {
   clip-path: polygon(0 0, 100% 50%, 0 100%);
   width: 12px;
   height: 18px;
-  left: 10px;
-  top: 7px;
+  left: 12px;
+  top: 9px;
 }
 
 #toggle-btn.play::after {
@@ -101,30 +101,19 @@ canvas {
 #toggle-btn.pause::before {
   width: 4px;
   height: 18px;
-  left: 8px;
-  top: 7px;
+  left: 10px;
+  top: 9px;
   clip-path: none;
 }
-
 #toggle-btn.pause::after {
   display: block;
   width: 4px;
   height: 18px;
-  right: 8px;
-  top: 7px;
-}
-#toggle-btn:hover {
+  right: 10px;
+  top: 9px;
 }
 
-#file-name-display{
-}
-
-#time-display{
-  font-family: monospace;
-  font-size: 14px;
-}
-
-/* === Hamburger Icon === */
+/* === Hamburger === */
 #hamburger-nav {
   position: absolute;
   top: 10px;
@@ -148,9 +137,15 @@ canvas {
   z-index: 9999;
 }
 
-/* === Mobile Responsive === */
-@media screen and (max-width: 600px) {
+/* === Responsive Tweaks === */
+@media screen and (max-width: 400px) {
   #toggle-btn {
-    font-size: 14px;
-    padding: 8px 16px;
+    width: 30px;
+    height: 30px;
   }
+
+  .menu-icon {
+    font-size: 28px;
+    padding: 6px;
+  }
+}
