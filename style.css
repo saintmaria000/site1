@@ -53,18 +53,24 @@ body {
   box-sizing: border-box;
 }
 
-/* === 下線を画面右側へ突き抜けるように描画 === */
 .form-input::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: auto;
-  right: -50vw; /* ←ここが突き抜けるキモ！ */
+  left: 0;
   height: 1px;
   background: white;
-  width: 150vw; /* ←幅を画面右側へ十分延ばす */
-  max-width: none;
+  width: 100%; /* 入力欄の幅ちょうど */
   pointer-events: none;
+}
+/* スマホ（iPhoneなど）用：右端まで突き抜け */
+@media screen and (max-width: 480px) {
+  .form-input::after {
+    width: 100vw;           /* 画面全幅で表示 */
+    left: 0;                /* 左端に揃える */
+    max-width: none;        /* max制限を解除 */
+    transform: none;        /* 念のため位置補正も除外 */
+  }
 }
 
 /* === ラベル === */
