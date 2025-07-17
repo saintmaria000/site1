@@ -99,6 +99,10 @@ input:focus {
   text-decoration: none;
   color: white;
 }
+.skip-link:hover,
+.skip-link:focus {
+  opacity: 0.6;
+}
 
 .skip-label {
   display: block;
