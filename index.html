@@ -8,27 +8,29 @@
 </head>
 <body>
   <div class="form-wrapper">
-    
-    <div class="invite-message">
-     Next party ... 8/30 // if you join
-      Next party ... 8/30 // if you join?
-      Next party ... 8/30 // if you join?
-      Next party ... 8/30 // if you join?
-      Next party ... 8/30 // if you join??
-    </div>
-    
-    <div class="form-input">
-      <label for="name">Name</label>
-      <input id="name" type="text" placeholder="Enter your name" />
-    </div>
-    
-    <div class="form-input">
-      <label for="email">Email</label>
-      <input id="email" type="email" placeholder="Enter your email" />
-    </div>
-    
-    <button id="submit-btn">enter</button>
-  
+    <form id="contact-form">
+      <div class="invite-message">
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join??
+      </div>
+      
+      <div class="form-input">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" required />
+      </div>
+      
+      <div class="form-input">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" required />
+      </div>
+      
+      <button type="submit" id="submit-btn">enter</button>
+    </form>
   </div>
 
   <div class="skip-wrapper">
@@ -38,6 +40,37 @@
     </a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: "参加フォームからの登録です"
+      };
+
+      try {
+        const res = await fetch("https://your-app.up.railway.app/send", { // ←URLはあなたのRailwayに置換
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        if (result.success) {
+          alert("送信しました！参加ありがとうございます。");
+          form.reset();
+        } else {
+          alert("送信に失敗しました: " + result.error);
+        }
+      } catch (err) {
+        alert("送信時にエラーが発生しました: " + err.message);
+      }
+    });
+  </script>
 </body>
 </html>
