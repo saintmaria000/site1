@@ -43,38 +43,36 @@
   <script>
     document.getElementById("contact-form").addEventListener("submit", async function (e) {
       e.preventDefault();
-
+  
       const form = document.getElementById('contact-form');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-      
-        const data = {
-          name: form.name.value,          email: form.email.value,
-          message: form.message.value
-        };
-        
-        try {
-          const res = await fetch('https://contact-form-server-production.up.railway.app/send', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          });
-        
-          const json = await res.json();
-        
-          if (json.success) {
-             alert('送信成功！メールをご確認ください');
-             form.reset();
-          } else {
-            alert('送信失敗: ' + json.error);
-          }
-        } catch (err) {
-          alert('送信時にエラーが発生しました: ' + err.message);
+  
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: "フォームからの自動メッセージ"
+      };
+  
+      try {
+        const res = await fetch('https://contact-form-server-production.up.railway.app/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+  
+        const json = await res.json();
+  
+        if (json.success) {
+          alert('送信成功！メールをご確認ください');
+          form.reset();
+        } else {
+          alert('送信失敗: ' + json.error);
         }
-      });
+      } catch (err) {
+        alert('送信時にエラーが発生しました: ' + err.message);
+      }
+    });
   </script>
 </body>
 </html>
