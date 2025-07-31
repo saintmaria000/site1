@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <form id="contact-form">
+      <div class="invite-message">
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join?
+        <br />
+        Next party ... 8/30 // if you join??
+      </div>
+      
+      <div class="form-input">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" required />
+      </div>
+      
+      <div class="form-input">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" required />
+      </div>
+      
+      <button type="submit" id="submit-btn">enter</button>
+    </form>
+  </div>
+
+  <div class="skip-wrapper">
+    <a href="visual.html" class="skip-link">
+      <span class="skip-label">Through</span>
+      <div class="skip-line"></div>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const form = document.getElementById('contact-form');
+  
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+      };
+  
+      try {
+        const res = await fetch('https://contact-form-server-production.up.railway.app/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+  
+        const json = await res.json();
+  
+        if (json.success) {
+          alert('送信成功！メールをご確認ください');
+          window.location.href = "visual.html";
+        } else {
+          alert('送信失敗: ' + json.error);
+        }
+      } catch (err) {
+        alert('送信時にエラーが発生しました: ' + err.message);
+      }
+    });
+  </script>
+</body>
+</html>
