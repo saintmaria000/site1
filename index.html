@@ -64,7 +64,7 @@
   
         if (json.success) {
           alert('送信成功！メールをご確認ください');
-          form.reset();
+          window.location.href = "visual.html";
         } else {
           alert('送信失敗: ' + json.error);
         }
