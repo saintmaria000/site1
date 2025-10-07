@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ukiyo — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="logo-main">u k i y o</span>
+      <span class="logo-sub">Film</span>
+    </a>
+  </header>
+
+  <!-- ================= Main ================= -->
+  <main class="stage" aria-label="portfolio horizontal scroll">
+    <!-- 名刺（左中央） -->
+    <section class="card">
+      <h1 class="name">Matias maehama</h1>
+      <p class="role">Directer・Producer</p>
+
+      <address class="contact">
+        〒156-0055<br />
+        東京都世田谷区船橋<br />
+        4-3-6-11 205
+      </address>
+
+      <div class="contact">
+        <a href="tel:+818040983423">080-4098-3423</a><br />
+        <a href="mailto:matiasmaehama@ukiyofilm.com">matiasmaehama@ukiyofilm.com</a>
+      </div>
+
+      <nav class="sns">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Vimeo">Vimeo</a>
+        <a href="#" aria-label="YouTube">Youtube</a>
+      </nav>
+    </section>
+
+    <!-- 映像プレビュー（右に等間隔） -->
+    <section class="reels">
+      <!-- プレビューは <video> を推奨。YouTube/Vimeo 埋め込みでもOK -->
+      <article class="reel">
+        <video muted loop playsinline preload="metadata" poster="assets/thumb1.jpg">
+          <source src="videos/sample1.mp4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="reel">
+        <video muted loop playsinline preload="metadata" poster="assets/thumb2.jpg">
+          <source src="videos/sample2.mp4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="reel">
+        <video muted loop playsinline preload="metadata" poster="assets/thumb3.jpg">
+          <source src="videos/sample3.mp4" type="video/mp4" />
+        </video>
+      </article>
+
+      <article class="reel">
+        <video muted loop playsinline preload="metadata" poster="assets/thumb4.jpg">
+          <source src="videos/sample4.mp4" type="video/mp4" />
+        </video>
+      </article>
+    </section>
+
+    <!-- main 下辺の黒ライン（横スクロールに追従） -->
+    <div class="baseline" aria-hidden="true"></div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer" aria-hidden="true"></footer>
+
+  <script>
+    // ホバー or フォーカス時だけプレビュー再生を強めたい場合は以下を有効化
+    document.querySelectorAll('.reel video').forEach(v => {
+      v.addEventListener('mouseenter', () => v.play().catch(()=>{}));
+      v.addEventListener('mouseleave', () => v.pause());
+      // 初期はサムネが見えるよう、明示的に停止（必要ならコメントアウト）
+      v.pause();
+    });
+  </script>
+</body>
+</html>
